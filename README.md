@@ -7,4 +7,10 @@
 
 You will need to run `npm install` after cloning the project & install Cypress.  
 Run `npx cypress open` to open the Cypress runner.  
-In its initial state, the test will navigate you to the page you'll write tests against.
+In its initial state, the provided spec file will navigate you to the page you'll write tests against.  
+
+#### Evaluation points
+
+- Test case readability
+- Test case maintainability
+- Efficiency and reliability; no flaky tests :)
