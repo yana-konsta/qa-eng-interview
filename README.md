@@ -2,7 +2,7 @@
 
 ### Setup & submission:
 
-1. Fork this repository to your own Github account
+1. Fork or clone this repository to your own Github account
 2. Invite `lauren@beautiful.ai` as a collaborator to your forked repo
 3. Include the link to your repo + link to your Beautiful.ai presentation in your take-home assessment submission
 
