@@ -10,7 +10,9 @@
 
 1. Using a pre-defined prompt to generate a slide, verify that the prompt generates the correct type of slide
 2. Create a useful test with your own prompt, ensuring the test is repeatable and maintainable. Validate the resulting slide that is created
-3. (Optional but encouraged) Set up GitHub Actions using (free) Github-hosted runners to run the tests 
+3. (Optional but encouraged) Set up GitHub Actions using (free) Github-hosted runners to run the tests
+
+_Hint: This feature utilizes Anthropic to generate the slides + content, and loosely-defined prompts will be unpredictable. More precise, instructive prompts will produce more consistent results._  
 
 In its initial state, the provided spec file will navigate you to the page you'll write tests against.  
 
