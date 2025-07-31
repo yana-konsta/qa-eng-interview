@@ -3,7 +3,7 @@
 ### Setup & submission:
 
 1. Fork or clone this repository to your own Github account
-2. Invite `lauren@beautiful.ai` and `ben@beautiful.ai` as collaborators to your repo
+2. Invite `lauren@beautiful.ai` and `sam@beautiful.ai` as collaborators to your repo
 3. Include the link to your repo + link to your Beautiful.ai presentation in your take-home assessment submission
 
 ### Using the provided Cypress project, write an automated test that performs the following:
