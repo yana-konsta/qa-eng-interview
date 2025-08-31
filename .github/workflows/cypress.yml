@@ -1,0 +1,68 @@
+name: E2E (Cypress)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Choose an environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options: [staging, production]
+      browser:
+        description: 'Choose a browser'
+        required: true
+        default: 'chrome'
+        type: choice
+        options: [chrome, firefox, edge]
+
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          browser: ${{ github.event.inputs.browser }}
+          spec: cypress/e2e/**/*.cy.{js,jsx,ts,tsx}
+        env:
+          CI: true
+          CYPRESS_BASE_URL: ${{ github.event.inputs.environment == 'production' && 'https://www.beautiful.ai' || 'https://beautifulslides-staging.appspot.com' }}
+
+      # Artifacts for debugging
+      - name: Upload Cypress screenshots
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      # Upload Cypress report
+      - name: Upload Cypress report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome
+          path: reports/html/*.html
+          if-no-files-found: ignore

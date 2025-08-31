@@ -1,0 +1,44 @@
+{
+    "response": {
+        "slideType": "images-with-text",
+        "slideTitle": "4 Popular Desserts Around the World",
+        "slide": {
+            "items": [
+                {
+                    "title": "Tiramisu",
+                    "text": "A classic Italian dessert with layers of espresso-soaked ladyfingers, creamy mascarpone cheese, and a dusting of cocoa powder.",
+                    "search": "tiramisu dessert",
+                    "searchStock": "tiramisu italian dessert"
+                },
+                {
+                    "title": "Baklava",
+                    "text": "A rich and flaky Greek pastry made with layers of phyllo dough, chopped nuts, and a sweet honey syrup.",
+                    "search": "baklava dessert",
+                    "searchStock": "baklava greek pastry"
+                },
+                {
+                    "title": "Churros",
+                    "text": "A popular Mexican fried-dough pastry, often coated in cinnamon sugar and served with a thick chocolate dipping sauce.",
+                    "search": "churros dessert",
+                    "searchStock": "churros mexican dessert"
+                },
+                {
+                    "title": "Mochi",
+                    "text": "Chewy Japanese rice cakes filled with sweet, creamy fillings like ice cream, red bean paste, or fruit.",
+                    "search": "mochi dessert",
+                    "searchStock": "mochi japanese rice cake"
+                }
+            ]
+        },
+        "traceData": {
+            "uid": null,
+            "workspaceId": null,
+            "request": {
+                "id": "2e9a009941b4fe7f15c8b4743d3da9c8",
+                "type": "generate-slide"
+            }
+        },
+        "finalPrompt": "You are building a slide from this prompt: \"4 Popular Desserts Around the World, with images and names of each dessert.\".\nFollow these steps to build the slide:\n1.     Provide a list of 3 to 6 images and a short phrase for each image. Suggest two search terms to find an image for each list item. First search term will be used as a prompt to generate an image from DALL-E, and should use natural language and avoid words like 'illustration' or 'diagram' in the search term. Second search term will be used to find a stock image or search in Google Images, so it should be more specfic and short.\n2.     Try being descriptive and specific, the more specific you are the better.\n3.     Generate the slide as a JSON object, STRICTLY respond with a JSON object of following format without any extra characters or deviations: {\"slide\":{\"items\":[{\"title\":\"string\",\"text\":\"string\",\"search\":\"string\",\"searchStock\":\"string\"}]},\"slideTitle\":\"generated slide title\"}"
+    },
+    "remainingCreditsBalance": -1
+}
