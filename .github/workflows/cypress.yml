@@ -12,12 +12,6 @@ on:
         default: 'staging'
         type: choice
         options: [staging, production]
-      browser:
-        description: 'Choose a browser'
-        required: true
-        default: 'chrome'
-        type: choice
-        options: [chrome, firefox, edge]
 
 concurrency:
   group: e2e-${{ github.ref }}
@@ -44,7 +38,7 @@ jobs:
       - name: Run Cypress
         uses: cypress-io/github-action@v6
         with:
-          browser: ${{ github.event.inputs.browser }}
+          browser: chrome
           spec: cypress/e2e/**/*.cy.{js,jsx,ts,tsx}
         env:
           CI: true
