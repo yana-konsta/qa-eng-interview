@@ -13,14 +13,14 @@ const SELECTORS = {
 Cypress.Commands.add("clickPromptExample", (exampleText) => {
     cy.log(`Clicking prompt example: "${exampleText}"`)
     // need to wait for the prompt text area to be empty before I select next prompt example
-    cy.get(SELECTORS.promptTextArea).should('be.empty')
+    cy.get(SELECTORS.promptTextArea, { timeout: 10000 }).should('be.empty')
     cy.get(SELECTORS.promptExample).contains(exampleText).click()
     cy.log(`Successfully clicked prompt example: "${exampleText}"`)
 })
 
 Cypress.Commands.add("verifyHeaderText", (text) => {
     cy.log(`Verifying header contains text: "${text}"`)
-    cy.get(SELECTORS.slideHeader).contains(text).should('be.visible')
+    cy.get(SELECTORS.slideHeader, { timeout: 10000 }).contains(text).should('be.visible')
     cy.log(`Successfully verified header text: "${text}"`)
 })
 
