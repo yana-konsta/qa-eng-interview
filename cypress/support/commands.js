@@ -38,7 +38,7 @@ Cypress.Commands.add("ensureSlideHasText", (expectedText) => {
 
 Cypress.Commands.add("enterCustomPrompt", (prompt) => {
     cy.log(`Entering custom prompt: "${prompt}"`)
-    cy.get(SELECTORS.promptTextArea).clear()
+    cy.get(SELECTORS.promptTextArea, { timeout: 10000 }).clear()
     cy.get(SELECTORS.promptTextArea).type(prompt)
     cy.get(SELECTORS.generateSlideButton).click()
     cy.log(`Successfully entered custom prompt: "${prompt}"`)
